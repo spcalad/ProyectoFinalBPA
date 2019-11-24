@@ -10,25 +10,53 @@ output:
 
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library(httr)
+library(rjson)
+library(plyr) 
+library(reshape2)
+library(dplyr)
+install.packages("formattable")
+library(formattable)
+
+# Obtener datos haciendo petición a la API
+url <- "https://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.json"
+request.api <- GET(url)
+
+# Hacer la transformación de la respuesta a dataframe
+response.api <- content(request.api, as = "text", encoding = "UTF-8")
+response.data <- fromJSON(response.api)
+schedule.data <- do.call("rbind.fill", lapply(response.data$'@graph', as.data.frame))
+
+# Cambiar valores 0 y 1 por gratis y de pago
+schedule.data[schedule.data$price == 0, "price"] <- "Gratis"
+schedule.data[schedule.data$price == 1, "price"] <- "De pago"
+
+# Crear nueva columna con intervalo número de días del evento
+schedule.data['number.days'] = as.Date(schedule.data$dtend, "%Y-%m-%d") - as.Date(schedule.data$dtstart, "%Y-%m-%d")
+schedule.data.madrid <- mutate( schedule.data, 
+                                interval.number.days = case_when(number.days == 0 ~ "1 día",
+                                                       between(number.days, 2, 30) ~ "Menos de un mes",
+                                                       between(number.days, 31, 90) ~ "Entre uno y tres meses",
+                                                       between(number.days, 91, 180) ~ "Entre tres y seis meses",
+                                                       between(number.days, 181, 365) ~ "Entre seis meses y un año",                                                        number.days > 366 ~ "Más de un año")) 
+
+# Seleccionar datos que se van a usar
+schedule.data.madrid <- select(schedule.data.madrid,
+                              price, interval.number.days, audience, recurrence.days,
+                              location = event.location,
+                              longitude = location.longitude,
+                              latitude = location.latitude)
+
 ```
 
-## R Markdown
+## Eventos en Madrid
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+```{r schedule.data.madrid, echo=FALSE}
+# TABLAS
+table_by_price <- ddply(schedule.data.madrid, .(price, interval.number.days), nrow)  %>% rename(Precio = price, Duración = interval.number.days, 'Número de eventos' = V1)
+formattable(table_by_price)
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
-
-```{r pressure, echo=FALSE}
-plot(pressure)
-```
-
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
