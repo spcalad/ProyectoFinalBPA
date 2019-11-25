@@ -5,9 +5,22 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: yeti
+    theme: flatly
 ---
 
+# Comparacion rgex
+
+
+# Comparación Markdown
+
+
+# Estudio descriptivo
+
+Para realizar el estudio descriptivo se utilizó la **API** _Actividades Culturales y de Ocio Municipal en los próximos 100 días_ disponible en el [Portal de datos abiertos del ayuntamiento de Madrid](https://datos.madrid.es/portal/site/egob). Una vez obtenidos los datos, se realizaron los siguientes pasos:
+
+1. Tomar únicamente los datos de la respuesta del _request_.
+2. Transformar de formato _JSON_ a _dataset_.
+3. Llenar un _dataframe_ con los datos obtenidos.
 
 ```{r setup, include=FALSE}
 library(httr)
@@ -17,6 +30,12 @@ library(reshape2)
 library(dplyr)
 install.packages("formattable")
 library(formattable)
+library(tidyr)
+library(ggplot2)
+library(leaflet)
+library(magrittr)
+library(htmltools)
+
 
 # Obtener datos haciendo petición a la API
 url <- "https://datos.madrid.es/egob/catalogo/206974-0-agenda-eventos-culturales-100.json"
@@ -49,14 +68,50 @@ schedule.data.madrid <- select(schedule.data.madrid,
 
 ```
 
-## Eventos en Madrid
-
+Igualmente se realizaron otras transformaciones para el tratamiento de los datos, como la creación de un intervalo de duración activa de los eventos en Madrid, con lo que se pudo agrupar los eventos dependiendo de su duración. 
 
 
 ```{r schedule.data.madrid, echo=FALSE}
-# TABLAS
-table_by_price <- ddply(schedule.data.madrid, .(price, interval.number.days), nrow)  %>% rename(Precio = price, Duración = interval.number.days, 'Número de eventos' = V1)
-formattable(table_by_price)
+# Tabla
+schedule.data.madrid.na <- schedule.data.madrid[!is.na(schedule.data.madrid$interval.number.days),]
+table_by_interval <- ddply(schedule.data.madrid.na, .(interval.number.days), nrow) %>% arrange(desc(V1)) %>% rename('Duración' = interval.number.days, 'Número de eventos' = V1)
+formattable(table_by_interval)
 ```
 
+La tabla anterior muestra que la mayoria de los eventos en Madrid para los próximos 100 días son eventos de un solo día y en menor cantidad le siguen los eventos que duran activos entre dos días y más de un año.
+
+
+## Eventos de pago vs. eventos gratuitos
+
+Otro aspecto interesante de analizar, fue la cantidad de eventos de pago vs. la cantidad de eventos gratuitos, agrupados igualmente por la duración activa de los eventos.
+
+```{r schedule.ggplot.madrid, echo=FALSE, message=FALSE}
+# Gráfica ggplot
+table_by_price <- ddply(schedule.data.madrid.na, .(price, interval.number.days), nrow) 
+duration_order <- c("1 día", "Menos de un mes", "Entre uno y tres meses", "Entre tres y seis meses", "Entre seis meses y un año", "Más de un año")
+
+graphic.schedule <- ggplot(table_by_price, aes(x = interval.number.days, y = V1))
+
+graphic.schedule + geom_point(color='blue') + geom_line() + theme_linedraw() +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+  labs(x = "Duración") + labs(y = "Número de eventos") +
+  scale_y_continuous(trans='log2') + scale_x_discrete(limits = duration_order) +
+  facet_grid(~ price)
+
+```
+
+En la gráfica anterior se observa que los eventos de pago y gratuitos tienen un comportamiento similar, decreciendo para eventos activos de más de un día y siendo los eventos de un día los de mayor cantidad en ambos casos. Sin embargo los eventos de pago de un día superan con amplio margen los eventos gratuitos de un día.
+
+## Mapa de los eventos en Madrid
+
+Los datos obtenidos también incluian la ubicación y nombre del lugar donde se realiza cada evento, por lo que se creo un mapa para visualizar donde se realizan los eventos, con el respectivo nombre del lugar.
+
+```{r schedule.ggmap.madrid, echo=FALSE,  warning=FALSE}
+# Mapa
+leaflet() %>% addTiles() %>% 
+  addMarkers(data = schedule.data.madrid,
+             lat = ~latitude, lng = ~longitude,
+             label = ~htmlEscape(location))
+
+```
 
