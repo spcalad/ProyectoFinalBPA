@@ -1,0 +1,30 @@
+body {
+  font-family: Courier;
+}
+
+#header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.author {
+  font-style: italic;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+.list-group-item.active{
+  background-color: #D72E0A;
+  border-color: #D72E0A;
+}
+
+.list-group-item.active:hover {
+    background-color: #D72E0A;
+    border-color: #D72E0A;
+}

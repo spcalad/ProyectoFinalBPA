@@ -5,11 +5,37 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: flatly
+    css: resource/styleRMD.css
 ---
 
-# Comparacion rgex
+# Expresiones regulares
 
+Algunos sitios web dedicados a la explicación del uso de las expresiones regulares coinciden en que su uso no es muy frecuente, sin embargo en el mundo de la programación a menudo nos enfrentamos a problemas que requieren el uso de expresiones regulares. A continuación se realizará una comparación entre dos sitios web que hablan sobre las expresiones regulares.
+<br><br>
+
+* [Introducing Regular Expressions by Michael Fitzgerald](https://www.oreilly.com/library/view/introducing-regular-expressions/9781449338879/ch01.html)
+
+  En la primera parte, este sitio web se dedica a explicar el problema inicial por el que surgieron las expresiones regulares, lo cual es un aspecto importante, ya que nos lleva a entender mejor el uso de ellas y en que casos se pueden usar. 
+
+  Posteriormente hacen la introducción a otro sitio web donde se pueden probar las expresiones regulares (seguramente con la intención de que el lector pruebe allí las expresiones regulares de los próximos ejemplos), y después explica a través de ejemplos prácticos algunos usos de las expresiones regulares.
+
+  Al final de los ejemplos más complejos realizan una lista con los símbolos utilizados en la creación de la expresión regular y el porqué fue utilizado en la expresión regular, lo que funciona como base si se piensa crear una expresión regular que aunque se parezca a algún ejemplo es muy específica. 
+
+  Por último terminan indicando aplicaciones en donde se pueden utilizar expresiones regulares para realizar búsquedas, acción que realizamos con frecuencia, pero no la imaginamos con expresiones regulares.
+<br><br>
+
+* [Guía para entender y usar expresiones regulares](https://www.adictosaltrabajo.com/2015/01/29/regexsam/)
+
+  Inicialmente este sitio web relata algunos ejemplos prácticos en los que se necesita el uso de expresiones regulares, con el fin de que el lector se contextualice y entienda en que casos puede usar las expresiones regulares.
+
+  A continuación muestra listas sobre la sintaxis de las expresiones regulares y hace un corto resumen con los símbolos más utilizados en la creación de expresiones regulares.
+
+  Posteriormente realiza una serie de ejemplos muy sencillos con los que abarca una parte importante de los símbolos de las expresiones regulares, lo que hace que el lector se familiarice entendiendo con ejemplos prácticos el uso de cada símbolo.
+
+  Al finalizar da algunos tips que pueden ser importantes para quien se enfrenta a la creación de una expresión regular muy específica.
+
+<br><br>
+Los dos sitos web aciertan en dar una introducción al lector sobre en que casos se pueden utilizar expresiones regulares. En los ejemplos, el primer sitio web realiza de forma narrativa la descripción de la expresión regular, mientras que el segundo sitio web realiza una lista con un paso a paso en la construcción de expresiones regulares más complejas. Por último ambos sitios web complementan la guía con elementos de utilidad para quien está aprendiendo expresiones regulares.
 
 # Comparación Markdown
 
@@ -111,7 +137,8 @@ Los datos obtenidos también incluian la ubicación y nombre del lugar donde se 
 leaflet() %>% addTiles() %>% 
   addMarkers(data = schedule.data.madrid,
              lat = ~latitude, lng = ~longitude,
-             label = ~htmlEscape(location))
+             label = ~htmlEscape(location), 
+             clusterOptions = markerClusterOptions())
 
 ```
 
