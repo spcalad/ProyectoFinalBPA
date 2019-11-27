@@ -21,4 +21,17 @@ install.packages("magrittr")
 install.packages("htmltools")
 ```
 
+Dependencias del paquete _httr_:
+
+* curl 
+* libcurl4-openssl-dev 
+* openssl 
+* libssl-dev
+
+Para instalar estas dependencias, ejecutar el siguiente comando:
+
+```
+sudo apt-get install curl libcurl4-openssl-dev openssl libssl-dev
+```
+
 
