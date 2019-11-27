@@ -1,47 +1,71 @@
 ---
-title: "Proyecto Final"
+title: "Proyecto Final de Business performance analysis"
 author: "Sandra Patricia Cala Díaz"
 output:   
   html_document:
     toc: true
     toc_float: true
-    css: resource/styleRMD.css
+    css: recursos/styleRMD.css
 ---
 
 # Expresiones regulares
-
-Algunos sitios web dedicados a la explicación del uso de las expresiones regulares coinciden en que su uso no es muy frecuente, sin embargo en el mundo de la programación a menudo nos enfrentamos a problemas que requieren el uso de expresiones regulares. A continuación se realizará una comparación entre dos sitios web que hablan sobre las expresiones regulares.
+<br><br>
+Algunos sitios web dedicados a la explicación del uso de las _expresiones regulares_ coinciden en que su uso no es muy frecuente, sin embargo en el mundo de la programación a menudo nos enfrentamos a problemas que requieren el uso de _expresiones regulares_. A continuación se realizará una comparación entre dos sitios web que hablan sobre las _expresiones regulares_.
 <br><br>
 
 * [Introducing Regular Expressions by Michael Fitzgerald](https://www.oreilly.com/library/view/introducing-regular-expressions/9781449338879/ch01.html)
 
-  En la primera parte, este sitio web se dedica a explicar el problema inicial por el que surgieron las expresiones regulares, lo cual es un aspecto importante, ya que nos lleva a entender mejor el uso de ellas y en que casos se pueden usar. 
+  En la primera parte, este sitio web se dedica a explicar el problema inicial por el que surgieron las _expresiones regulares_, lo cual es un aspecto importante, ya que nos lleva a entender mejor el uso de ellas y en que casos se pueden usar. 
 
-  Posteriormente hacen la introducción a otro sitio web donde se pueden probar las expresiones regulares (seguramente con la intención de que el lector pruebe allí las expresiones regulares de los próximos ejemplos), y después explica a través de ejemplos prácticos algunos usos de las expresiones regulares.
+  Posteriormente hacen la introducción a otro sitio web donde se pueden probar las _expresiones regulares_ (seguramente con la intención de que el lector pruebe allí las _expresiones regulares_ de los próximos ejemplos), y después explica a través de ejemplos prácticos algunos usos de las _expresiones regulares_.
 
-  Al final de los ejemplos más complejos realizan una lista con los símbolos utilizados en la creación de la expresión regular y el porqué fue utilizado en la expresión regular, lo que funciona como base si se piensa crear una expresión regular que aunque se parezca a algún ejemplo es muy específica. 
+  Al final de los ejemplos más complejos realizan una lista con los símbolos utilizados en la creación de la _expresión regular_ y el porqué fue utilizado en la _expresión regular_, lo que funciona como base si se piensa crear una expresión regular que aunque se parezca a algún ejemplo es muy específica. 
 
-  Por último terminan indicando aplicaciones en donde se pueden utilizar expresiones regulares para realizar búsquedas, acción que realizamos con frecuencia, pero no la imaginamos con expresiones regulares.
+  Por último terminan indicando aplicaciones en donde se pueden utilizar _expresiones regulares_ para realizar búsquedas, acción que realizamos con frecuencia, pero no la imaginamos con _expresiones regulares_.
 <br><br>
 
 * [Guía para entender y usar expresiones regulares](https://www.adictosaltrabajo.com/2015/01/29/regexsam/)
 
-  Inicialmente este sitio web relata algunos ejemplos prácticos en los que se necesita el uso de expresiones regulares, con el fin de que el lector se contextualice y entienda en que casos puede usar las expresiones regulares.
+  Inicialmente este sitio web relata algunos ejemplos prácticos en los que se necesita el uso de _expresiones regulares_, con el fin de que el lector se contextualice y entienda en que casos puede usar las _expresiones regulares_.
 
-  A continuación muestra listas sobre la sintaxis de las expresiones regulares y hace un corto resumen con los símbolos más utilizados en la creación de expresiones regulares.
+  A continuación muestra listas sobre la sintaxis de las _expresiones regulares_ y hace un corto resumen con los símbolos más utilizados en la creación de _expresiones regulares_.
 
-  Posteriormente realiza una serie de ejemplos muy sencillos con los que abarca una parte importante de los símbolos de las expresiones regulares, lo que hace que el lector se familiarice entendiendo con ejemplos prácticos el uso de cada símbolo.
+  Posteriormente realiza una serie de ejemplos muy sencillos con los que abarca una parte importante de los símbolos de las _expresiones regulares_, lo que hace que el lector se familiarice entendiendo con ejemplos prácticos el uso de cada símbolo.
 
-  Al finalizar da algunos tips que pueden ser importantes para quien se enfrenta a la creación de una expresión regular muy específica.
+  Al finalizar da algunos tips que pueden ser importantes para quien se enfrenta a la creación de una _expresión regular_ muy específica.
 
 <br><br>
-Los dos sitos web aciertan en dar una introducción al lector sobre en que casos se pueden utilizar expresiones regulares. En los ejemplos, el primer sitio web realiza de forma narrativa la descripción de la expresión regular, mientras que el segundo sitio web realiza una lista con un paso a paso en la construcción de expresiones regulares más complejas. Por último ambos sitios web complementan la guía con elementos de utilidad para quien está aprendiendo expresiones regulares.
+Los dos sitos web aciertan en dar una introducción al lector sobre en que casos se pueden utilizar _expresiones regulares_. En los ejemplos, el primer sitio web realiza de forma narrativa la descripción de la _expresión regular_, mientras que el segundo sitio web realiza una lista con un paso a paso en la construcción de _expresiones regulares_ más complejas. Por último ambos sitios web complementan la guía con elementos de utilidad para quien está aprendiendo _expresiones regulares_.
+<br><br>
 
-# Comparación Markdown
+# Markdown
+<br><br>
+El uso de _markdown_ está cada vez más justificado, pues ofrece un sin número de ventajas que en el mundo cambiante en el que vivimos representa un valor agregado al momento de decidir que formato utilizar para escribir cualquier tipo de documento, ya sea un informe, artículo, entre otros. A continuación se realizará la comparación entre dos sitios web que hablan sobre el uso del _markdown_.
+<br><br>
 
+* [Getting started. Markdown guide](https://www.markdownguide.org/getting-started/)
+
+  Este sitio web comienza por contar algo de historia sobre porque surguió _markdown_ dando algunos ejemplos básicos sobre las necesidades que puede enfrentar una persona que podría utilizar _markdown_. Después expone las principales ventajas que tiene el uso de _markdown_ que van desde la portabilidad, hasta la importancia que tiene el preservar archivos en formatos que se puedan leer con el pasar del tiempo.
+  
+  Posteriormente hace algunos analisis técnicos sobre como funciona _markdown_. Igualmente motiva el uso del markdown con una lista de ejemplos prácticos e indican herramientas y otras guías que pueden ser usadas dependiendo del interés particular que se tenga por usar _markdown_. Finalmente señala documentación que puede ser útil en cualquier uso de _markdown_.
+<br><br>
+ 
+* [Markdown Reference](https://commonmark.org/help/)
+
+  Aunque es muy corta, la página web, contiene 3 secciones que la hacen muy concreta y útil para alguien que se enfrenta por primera vez al uso de _markdown_.
+  
+  Al inicio da una sucinta explicación sobre lo que es _markdown_ e invita a utilizar un tutorial completo (dentro del mismo sitio web) sobre funcionalidades de markdown; además se puede parácticar dentro del mismo sitio web, pues cuentan con su propio interprete online de _markdown_.
+  
+  Luego exhibe una lista con los elementos básicos de _markdown_ y muestra en paralelo las expresiones escritas en _markdown_ y como se visualizarán una vez interpretadas.
+  
+  Por último, complementa la información con referencias de guías para usuarios más avanzados o con algún problema en particular con el uso del _markdown_.
+  
+<br><br>
+La primera página cuenta con mucha documentación y enlaces interesantes que se pueden usar cuando se está aprendiendo _markdown_, sin embargo, puede estar dirigida a un lector un poco más técnico y que quizás quiera revisar más de una documentación antes de comenzar a utilizar _markdown_. Por otro lado, el segundo sitio web da herramientas básicas para que el lector pueda ir prácticando mientras aprende el uso del _markdow_, lo que le da un plus sobre todo si el lector no es una persona tan técnica. 
+<br><br>
 
 # Estudio descriptivo
-
+<br><br>
 Para realizar el estudio descriptivo se utilizó la **API** _Actividades Culturales y de Ocio Municipal en los próximos 100 días_ disponible en el [Portal de datos abiertos del ayuntamiento de Madrid](https://datos.madrid.es/portal/site/egob). Una vez obtenidos los datos, se realizaron los siguientes pasos:
 
 1. Tomar únicamente los datos de la respuesta del _request_.
@@ -54,7 +78,6 @@ library(rjson)
 library(plyr) 
 library(reshape2)
 library(dplyr)
-install.packages("formattable")
 library(formattable)
 library(tidyr)
 library(ggplot2)
@@ -83,7 +106,7 @@ schedule.data.madrid <- mutate( schedule.data,
                                                        between(number.days, 2, 30) ~ "Menos de un mes",
                                                        between(number.days, 31, 90) ~ "Entre uno y tres meses",
                                                        between(number.days, 91, 180) ~ "Entre tres y seis meses",
-                                                       between(number.days, 181, 365) ~ "Entre seis meses y un año",                                                        number.days > 366 ~ "Más de un año")) 
+                                                       between(number.days, 181, 365) ~ "Entre seis meses y un año",                                                                          number.days > 366 ~ "Más de un año")) 
 
 # Seleccionar datos que se van a usar
 schedule.data.madrid <- select(schedule.data.madrid,
@@ -95,42 +118,46 @@ schedule.data.madrid <- select(schedule.data.madrid,
 ```
 
 Igualmente se realizaron otras transformaciones para el tratamiento de los datos, como la creación de un intervalo de duración activa de los eventos en Madrid, con lo que se pudo agrupar los eventos dependiendo de su duración. 
+<br><br>
 
 
 ```{r schedule.data.madrid, echo=FALSE}
 # Tabla
 schedule.data.madrid.na <- schedule.data.madrid[!is.na(schedule.data.madrid$interval.number.days),]
-table_by_interval <- ddply(schedule.data.madrid.na, .(interval.number.days), nrow) %>% arrange(desc(V1)) %>% rename('Duración' = interval.number.days, 'Número de eventos' = V1)
-formattable(table_by_interval)
+table.interval <- ddply(schedule.data.madrid.na, .(interval.number.days), nrow) %>% arrange(desc(V1)) %>% rename('Duración' = interval.number.days, 'Número de eventos' = V1)
+formattable(table.interval)
 ```
 
 La tabla anterior muestra que la mayoria de los eventos en Madrid para los próximos 100 días son eventos de un solo día y en menor cantidad le siguen los eventos que duran activos entre dos días y más de un año.
-
+<br><br>
 
 ## Eventos de pago vs. eventos gratuitos
-
+<br><br>
 Otro aspecto interesante de analizar, fue la cantidad de eventos de pago vs. la cantidad de eventos gratuitos, agrupados igualmente por la duración activa de los eventos.
+<br><br>
 
 ```{r schedule.ggplot.madrid, echo=FALSE, message=FALSE}
 # Gráfica ggplot
-table_by_price <- ddply(schedule.data.madrid.na, .(price, interval.number.days), nrow) 
-duration_order <- c("1 día", "Menos de un mes", "Entre uno y tres meses", "Entre tres y seis meses", "Entre seis meses y un año", "Más de un año")
+table.price <- ddply(schedule.data.madrid.na, .(price, interval.number.days), nrow) 
+duration.order <- c("1 día", "Menos de un mes", "Entre uno y tres meses", "Entre tres y seis meses", "Entre seis meses y un año", "Más de un año")
 
-graphic.schedule <- ggplot(table_by_price, aes(x = interval.number.days, y = V1))
+graphic.schedule <- ggplot(table.price, aes(x = interval.number.days, y = V1))
 
-graphic.schedule + geom_point(color='blue') + geom_line() + theme_linedraw() +
+graphic.schedule + geom_point(color='blue') + theme_linedraw() +
   theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
   labs(x = "Duración") + labs(y = "Número de eventos") +
-  scale_y_continuous(trans='log2') + scale_x_discrete(limits = duration_order) +
+  scale_y_continuous(trans='log2') + scale_x_discrete(limits = duration.order) +
   facet_grid(~ price)
 
 ```
 
 En la gráfica anterior se observa que los eventos de pago y gratuitos tienen un comportamiento similar, decreciendo para eventos activos de más de un día y siendo los eventos de un día los de mayor cantidad en ambos casos. Sin embargo los eventos de pago de un día superan con amplio margen los eventos gratuitos de un día.
+<br><br>
 
-## Mapa de los eventos en Madrid
-
+## Mapa de eventos en Madrid
+<br><br>
 Los datos obtenidos también incluian la ubicación y nombre del lugar donde se realiza cada evento, por lo que se creo un mapa para visualizar donde se realizan los eventos, con el respectivo nombre del lugar.
+<br><br>
 
 ```{r schedule.ggmap.madrid, echo=FALSE,  warning=FALSE}
 # Mapa
